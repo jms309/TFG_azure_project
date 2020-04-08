@@ -18,6 +18,6 @@ and we will see what sensors are in a good state and which are not.
 
 There are you differents branchs:
 
- - Develop branch: This branch is called "tfg/develop". In this branch I am going to build the DEV environment of the project, where there will be the new development.
- - Production branch: This branch is called "tfg/master". This branch is what will contain the PROD environment of the project, that it is the actual working system.
+ - **Develop branch:** This branch is called "tfg/develop". In this branch I am going to build the DEV environment of the project, where there will be the new development.
+ - **Production branch:** This branch is called "tfg/master". This branch is what will contain the PROD environment of the project, that it is the actual working system.
 
