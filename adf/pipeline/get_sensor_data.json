@@ -45,7 +45,10 @@
 								"value": "raw/sensor_data/@{formatDateTime(pipeline().parameters.date, 'yyyy/MM/dd/HH')}",
 								"type": "Expression"
 							},
-							"filename": "@{formatDateTime(dataset().date,'yyyy_MM_dd_HH_mm')}_sensor_data.xml"
+							"filename": {
+								"value": "@{formatDateTime(pipeline().parameters.date,'yyyy_MM_dd_HH_mm')}_sensor_data.xml",
+								"type": "Expression"
+							}
 						}
 					}
 				]
