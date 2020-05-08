@@ -4,15 +4,7 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://tfgdevdatalake.dfs.core.windows.net/",
-			"accountKey": {
-				"type": "AzureKeyVaultSecret",
-				"store": {
-					"referenceName": "kv",
-					"type": "LinkedServiceReference"
-				},
-				"secretName": "stg-key"
-			}
+			"url": "https://tfgdevdatalake.dfs.core.windows.net/"
 		}
 	}
 }
