@@ -1,0 +1,17 @@
+{
+	"name": "sensor_description",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "traffic_api",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "configuratie/xml"
+			}
+		}
+	}
+}
