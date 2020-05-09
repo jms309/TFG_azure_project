@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "tfg-dev-adf"
+		},
+		"datalake_properties_typeProperties_url": {
+			"value": "https://tfgdevdatalake.dfs.core.windows.net/"
+		},
+		"kv_properties_typeProperties_baseUrl": {
+			"value": "https://tfg-dev-kv.vault.azure.net/"
+		},
+		"sensor_data_properties_typeProperties_url": {
+			"value": "http://miv.opendata.belfla.be/miv/"
+		},
+		"traffic_api_properties_typeProperties_url": {
+			"value": "http://miv.opendata.belfla.be/miv/"
+		}
+	}
+}

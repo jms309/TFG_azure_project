@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "tfg-dev-adf"
+		},
+		"datalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://tfgdevdatalake.dfs.core.windows.net/"
+		},
+		"kv_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://tfg-dev-kv.vault.azure.net/"
+		},
+		"sensor_data_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "http://miv.opendata.belfla.be/miv/"
+		},
+		"traffic_api_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "http://miv.opendata.belfla.be/miv/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"kv_properties_typeProperties_baseUrl": {
+						"value": "[parameters('kv_properties_typeProperties_baseUrl')]"
+					},
+					"sensor_data_properties_typeProperties_url": {
+						"value": "[parameters('sensor_data_properties_typeProperties_url')]"
+					},
+					"traffic_api_properties_typeProperties_url": {
+						"value": "[parameters('traffic_api_properties_typeProperties_url')]"
+					},
+					"datalake_properties_typeProperties_url": {
+						"value": "[parameters('datalake_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
