@@ -1,0 +1,51 @@
+{
+	"name": "process_sensors",
+	"properties": {
+		"activities": [
+			{
+				"name": "process_data",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.03:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/v0.0.1/driver",
+					"baseParameters": {
+						"date": {
+							"value": "@pipeline().parameters.date",
+							"type": "Expression"
+						}
+					},
+					"libraries": [
+						{
+							"maven": {
+								"coordinates": "com.databricks:spark-xml:0.5.0"
+							}
+						}
+					]
+				},
+				"linkedServiceName": {
+					"referenceName": "dbricks",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"cluster_version": "6.5.x-scala2.11",
+						"cluster_node_type": "Standard_F4s",
+						"workers": "1"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"date ": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
