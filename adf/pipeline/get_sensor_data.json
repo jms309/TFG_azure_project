@@ -42,7 +42,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"path": {
-								"value": "raw/sensor_data/@{formatDateTime(pipeline().parameters.date, 'yyyy/MM/dd/HH')}",
+								"value": "raw/sensor_data/@{formatDateTime(pipeline().parameters.date, 'yyyy/MM/dd')}",
 								"type": "Expression"
 							},
 							"filename": {
