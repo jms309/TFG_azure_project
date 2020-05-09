@@ -43,7 +43,8 @@
 		],
 		"parameters": {
 			"date ": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "2020-05-08 00:00:00"
 			}
 		},
 		"annotations": []
